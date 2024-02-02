@@ -3,7 +3,7 @@
 \usepackage{amsthm}
 \usepackage{amssymb}
 
-\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+\newenvironment{solution}{\begin{proof}[Solution]\hfill\\}{\end{proof}}
 \renewcommand*{\qedsymbol}{\(\blacksquare\)}
 
 \title{MTH 4320 Homework 1}
@@ -28,7 +28,23 @@
 
 \section{Problem 3}
 \begin{solution}
-    
+    \begin{enumerate}
+        \item Store the first element of the input list \(L\) in a variable \(M\).
+        \item For every element in \(L\):
+        \begin{itemize}
+            \item If it is greater than \(M\) then update \(M\) with that element.
+        \end{itemize}
+        \item We found the first largest element \(M\) in \(L\).
+        \item Let \(N:=\) the first element of \(L\).
+        \item For every element in \(L\):
+        \begin{itemize}
+            \item If it is greater than \(N\) but less than \(M\) then update \(N\) with that element.
+        \end{itemize}
+        \item We found the second largest element \(N\) in \(L\).
+        \item Let \(M:=N\) and \(N:=\) the first element of \(L\).
+        \item Repeat steps 2-6 until we found the 10th largest element \(M\).
+    \end{enumerate}
+    The running time is \(10n=O(n)\).
 \end{solution}
 
 \section{Problem 4}
