@@ -1,21 +1,78 @@
 \documentclass[12pt, letterpaper]{article}
 \usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
 
-\newenvironment{solution}{\begin{proof}[Solution]\hfill\\}{\end{proof}}
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
 \renewcommand*{\qedsymbol}{\(\blacksquare\)}
 
 \title{MTH 4320 Homework 2}
 \author{Yaohui Wu}
-\date{February 5, 2024}
+\date{February 14, 2024}
 
 \begin{document}
 \maketitle
-\tableofcontents
 \section{Problem 1}
+\begin{solution}
+    \begin{align*}
+        T(1) &= O(1) \\ T(n) &= 2\cdot T(n-1) \\ &= 2(2\cdot T(n-2)) \\ &= 2^n\cdot T(n-(n-1)) \\
+        &= 2^n\cdot T(1)) \\ &= O(2^n)
+    \end{align*}
+    The running time is
+    \begin{align*}
+        T(1) &= O(1) \\ T(n) &= O(2^n)
+    \end{align*}
+\end{solution}
 \section{Problem 2}
+\begin{solution}
+    We have
+    \begin{align*}
+        T(1) &= O(1) \\
+        T(n) &= n+4\cdot T\left(\frac{n}{2}\right) \\ &= n+4\left[\frac{n}{2}+4\cdot T\left(\frac{n}{2^2}\right)\right] \\
+        &= n+2n+4^2\cdot T\left(\frac{n}{2^2}\right) \\ &= n+2n+\cdots+2^{k-1}n+4^k\cdot T\left(\frac{n}{2^k}\right)
+    \end{align*}
+    \(T(n)\) converges when \(T\left(\frac{n}{2^k}\right)=T(1)\) so \(k=\log n\) then we have
+    \begin{align*}
+        T(n) &= n+2n+2^2n+\cdots+2^{\log(n)-1}n+4^{\log n}T(1) \\ &= n+2n+2^2n+\cdots+\frac{n^2}{2}+n^2\cdot T(1) \\ &= O(n^2)
+    \end{align*}
+    The running time is
+    \begin{align*}
+        T(1) &= O(1) \\ T(n) &= O(n^2)
+    \end{align*}
+\end{solution}
 \section{Problem 3}
+\begin{solution}
+    The algorithm is
+    \begin{enumerate}
+        \item Sort \(A\) in ascending order using merge sort.
+        \item Find the set of all sums of pairs of elements from \(A\).
+        \item Iterate over the pairs and use binary search to find if there is another pair that sums to \(2000\).
+    \end{enumerate}
+    The running time is \(O(n\log n)+O(n^2)+O(n^2\log n)=O(n^2\log n)\).
+\end{solution}
 \section{Problem 4}
+\begin{solution}
+    The algorithm is
+    \begin{enumerate}
+        \item Divide \(L\) into two intervals \(L\) and \(R\) of the same size. 
+        \item Find the largest number in \(L\) and \(R\) using recursion.
+        \item Return the largest number in each interval then compare them to find the largest number in \(L\).
+    \end{enumerate}
+    The running time is \(O(n)\).
+\end{solution}
 \section{Problem 5}
+\begin{solution}
+    The algorithm is
+    \begin{enumerate}
+        \item Divide \(A\) into  two intervals \(L\) and \(R\) of equal size.
+        \item Sort the elements in each interval and iterate over the elements of \(L\) and \(R\).
+        \item If the current element in \(L\) is greater than an element in \(R\)
+        then we add the number of the remaining elements in \(L\) to the count of the flipped pairs.
+        \item If the current element in \(L\) is not greater than an element in \(R\) then we skip it
+        and we make sure we only count every flipped pair exactly once.
+        \item Merge \(L\) and \(R\) then return the sum of the count of the flipped pairs using recursion.
+    \end{enumerate}
+    The running time is \(O(n\log n)\).
+\end{solution}
 \end{document}
