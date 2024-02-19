@@ -1,6 +1,5 @@
-\documentclass[12pt, letterpaper]{article}
-\usepackage[margin=1in]{geometry}
-\usepackage{amsmath}
+\documentclass[12pt]{article}
+\usepackage[letterpaper, margin=1in]{geometry}
 \usepackage{amsthm}
 \usepackage{amssymb}
 
@@ -9,11 +8,23 @@
 
 \title{MTH 4320 Homework 3}
 \author{Yaohui Wu}
-\date{February 14, 2024}
+\date{February 18, 2024}
 
 \begin{document}
 \maketitle
 \section*{Problem 1}
+\begin{solution}
+    Let the graph on the left be \(G\) and the graph of the drawing be \(H\).
+    Notice that the set of vertices \(\{a,c,f,g,h\}\) in \(G\) is an independent
+    set where no two vertices in the set are adjacent. We can label the vertices
+    in \(H\) as \(\{a,c,f,h\}\) on the left side and \(\{g,e,d,b\}\) on the right
+    side from top to bottom respectively. Then we have the vertex \(a\) is adjacent
+    to the vertices \(\{b,d,e\}\) denoted by \(a\sim\{b,d,e\}\). Similarly, we have
+    \(c\sim\{b,d,g\},f\sim\{b,e,g\}\), and \(h\sim\{d,e,g\}\). Hence we have that
+    any two vertices with the same labels are adjacent in \(G\) if and only if
+    they are adjacent in \(H\). Therefore, it is shown that \(G\) and \(H\) are
+    identical or \(G\cong H\), \(G\) is isomorphic to \(H\).
+\end{solution}
 \section*{Problem 2}
 \section*{Problem 3}
 \end{document}
