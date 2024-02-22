@@ -8,7 +8,7 @@
 
 \title{MTH 4320 Homework 3}
 \author{Yaohui Wu}
-\date{February 18, 2024}
+\date{February 21, 2024}
 
 \begin{document}
 \maketitle
@@ -16,15 +16,56 @@
 \begin{solution}
     Let the graph on the left be \(G\) and the graph of the drawing be \(H\).
     Notice that the set of vertices \(\{a,c,f,g,h\}\) in \(G\) is an independent
-    set where no two vertices in the set are adjacent. We can label the vertices
+    set, where no two vertices in the set are adjacent. We can label the vertices
     in \(H\) as \(\{a,c,f,h\}\) on the left side and \(\{g,e,d,b\}\) on the right
-    side from top to bottom respectively. Then we have the vertex \(a\) is adjacent
-    to the vertices \(\{b,d,e\}\) denoted by \(a\sim\{b,d,e\}\). Similarly, we have
-    \(c\sim\{b,d,g\},f\sim\{b,e,g\}\), and \(h\sim\{d,e,g\}\). Hence we have that
-    any two vertices with the same labels are adjacent in \(G\) if and only if
-    they are adjacent in \(H\). Therefore, it is shown that \(G\) and \(H\) are
-    identical or \(G\cong H\), \(G\) is isomorphic to \(H\).
+    side from top to bottom respectively. Then we observe that vertex \(a\) is
+    adjacent to the vertices \(\{b,d,e\}\) denoted by \(a\sim\{b,d,e\}\).
+    Similarly, we observe that \(c\sim\{b,d,g\},f\sim\{b,e,g\}\), and \(h\sim\{d,e,g\}\).
+    Hence we have that any two vertices with the same labels are adjacent in \(G\)
+    if and only if they are adjacent in \(H\). Therefore, it is shown that \(G\)
+    and \(H\) are identical or \(G\cong H\), \(G\) is isomorphic to \(H\).
 \end{solution}
+
 \section*{Problem 2}
+\begin{solution}
+    The algorithm is
+    \begin{enumerate}
+        \item Label the vertices in graph \(G\) as \(V=\{v_1,\dots,v_n\}\).
+        This takes \(O(|V|)\) time.
+        \item For every vertex \(v_i\) in \(V\) starting from \(v_1\)
+        \begin{itemize}
+            \item Assign a direction to every edge incidental to \(v_i\) that
+            has not been assigned a direction.
+            \item If the other endpoint has a greater value of \(i\) then we
+            assign the edge to that direction else we assign it to the opposite
+            direction.
+        \end{itemize}
+        \item Labeling all of the edges takes \(O(|E|)\) time.
+    \end{enumerate}
+    The algorithm make sure that the directions of the edges of every vertex
+    go to the adjacent vertices with a label of higher value. Therefore, there
+    must not be any cycles in the directed graph. The running time of the
+    algorithm is \(O(|V|)+O(|E|)=O(|V|+|E|)\).
+\end{solution}
+
 \section*{Problem 3}
+\begin{solution}
+    For a binary sequence of length \(k=3\), \(G\) can be a cube with 8 vertices
+    being the corners having edges connecting the other 3 adjacent corners. In
+    general, for any positive integer \(n\) we have that \(G(n)\) is a connected
+    graph with only one component. We can prove this proposition using proof by
+    induction. Let the statement be \(P(k)\) for all positive integer \(k\)
+    where k is the length of the binary sequence. \\
+    Base case: For \(k=1\) we have two vertices 0 and 1 connected by an edge so
+    \(P(1)\) is true. \\
+    Induction steps: Assume that \(P(k)\) is true so \(G(k)\) is connected.
+    When we add one more bit to the binary sequence of \(G(k)\), we can choose
+    any position and insert the same bit to maintain the graph \(G(k)\). Then
+    we can change the new bit of each new binary sequence to create some new
+    vertices connected to the existing vertices of \(G(k)\) to form the graph
+    \(G(k+1)\). Hence \(G(k+1)\) is constructed from \(G(k)\) and \(G(k)\) is
+    connected so \(G(k+1)\) is connected and \(P(k+1)\) is true. \\
+    Therefore, it is proved by mathematical induction that for any positive
+    integer \(n\) the graph \(G(n)\) is connected so it has only one component.
+\end{solution}
 \end{document}
