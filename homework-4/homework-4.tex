@@ -1,6 +1,7 @@
 \documentclass[12pt]{article}
 \usepackage[letterpaper, margin=1in]{geometry}
 \usepackage{amsthm}
+\usepackage{amssymb}
 
 \newenvironment*{solution}{\begin{proof}[solution]}{\end{proof}}
 \renewcommand*{\qedsymbol}{\(\blacksquare\)}
@@ -11,4 +12,12 @@
 
 \begin{document}
 \maketitle
+\section*{Problem 1}
+\begin{solution}
+    The edges of the breadth-first search (BFS) tree of the graph \(G\)
+    starting from root \(g\) are \(e_1=\{g,b\},e_2=\{g,i\},e_3=\{g,j\},e_4=\{
+        b,a\},e_5=\{b,c\},e_6=\{i,d\},e_7=\{i,f\},e_8=\{j,e\},e_9=\{j,h\}\) in
+        the order from first to last respectively, that which was to be
+        demonstrated.
+\end{solution}
 \end{document}
