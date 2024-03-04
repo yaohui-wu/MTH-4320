@@ -3,7 +3,7 @@
 \usepackage{amsthm}
 \usepackage{amssymb}
 
-\newenvironment*{solution}{\begin{proof}[solution]}{\end{proof}}
+\newenvironment*{solution}{\begin{proof}[Solution]}{\end{proof}}
 \renewcommand*{\qedsymbol}{\(\blacksquare\)}
 
 \title{MTH 4320 Homework 4}
@@ -34,5 +34,24 @@
     that are necessary to check. Visiting all vertices takes \(O(|V|)\) time,
     visiting all edges takes \(O(|E|)\) time, and all other operations takes
     \(O(1)\) time. Therefore, the running time is \(O(|V|+|E|)\).
+\end{solution}
+\section*{Problem 3}
+\begin{solution}
+
+\end{solution}
+\section*{Problem 4}
+\begin{solution}
+    The algorithm is
+    \begin{enumerate}
+        \item Start from any vertex \(v\) and run the BFS algorithm on graph
+        \(G\).
+        \item If \(G\) is connected then the set of all of the vertices in
+        \(G\) is the largest commune.
+        \item If \(G\) is not connected then we run BFS for each component of
+        \(G\). We update the largest commune with the set of all vertices in
+        the component that has the largest number of vertices.
+    \end{enumerate}
+    The BFS algorithm visits all of the vertices and edges in the graph so the
+    time complexity is \(O(|V|+|E|)\).
 \end{solution}
 \end{document}
