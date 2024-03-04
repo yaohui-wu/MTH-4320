@@ -20,4 +20,19 @@
         the order from first to last respectively, that which was to be
         demonstrated.
 \end{solution}
+\section*{Problem 2}
+\begin{solution}
+    The algorithm is a modified BFS.
+    \begin{enumerate}
+        \item Let the vertex of every squirrel be the root of a BFS tree.
+        \item Run the modified BFS  for every squirrel to find all vertices
+        that each root can reach using at most 5 edges.
+        \item If there is a common vertex in the BFS trees of all five
+        squirrels then return true else return false.
+    \end{enumerate}
+    This is a modified BFS alogrithm so we need to visit every vertex and edge
+    that are necessary to check. Visiting all vertices takes \(O(|V|)\) time,
+    visiting all edges takes \(O(|E|)\) time, and all other operations takes
+    \(O(1)\) time. Therefore, the running time is \(O(|V|+|E|)\).
+\end{solution}
 \end{document}
