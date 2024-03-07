@@ -1,5 +1,6 @@
 \documentclass[12pt]{article}
 \usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
 
@@ -8,7 +9,7 @@
 
 \title{MTH 4320 Homework 4}
 \author{Yaohui Wu}
-\date{March 4, 2024}
+\date{March 6, 2024}
 
 \begin{document}
 \maketitle
@@ -37,7 +38,20 @@
 \end{solution}
 \section*{Problem 3}
 \begin{solution}
-
+    We can change the graph \(G\) to \(G'\) by adding an vertex in the middle
+    of every blue edge s.t. that \(G'\) has all uncolored edges of weight 1.
+    Then we can apply the BFS algorithm on \(G'\) starting from root \(s\) to
+    find the shortest paths tree in \(G'\). The shortest paths tree from the
+    vertex \(s\) in \(G'\) will be the same as the shortest paths tree in \(G
+    \) after we remove the extra vertices. The number of vertices we can add
+    in \(G'\) is at most \(|E(G)|\) so \(G'\) has \(|V(G)|+|E(G)|\) vertices.
+    Hence the number of edges in \(G'\) is at most \(2\cdot|E(G)|\). Since we
+    are using the BFS algorithm on \(G'\),the running time is
+    \begin{align*}
+        O(|V(G')|+|E(G')|) &=O(|V(G)|+|E(G)|+2\cdot|E(G)|)\\ &=O(|V(G)|+|E(G)|
+        )\\ &=O(|V(G)+E(G)|)
+    \end{align*}
+    Therefore, the time complexity of the algorithm is \(O(|V+E|)\).
 \end{solution}
 \section*{Problem 4}
 \begin{solution}
