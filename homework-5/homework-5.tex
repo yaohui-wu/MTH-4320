@@ -33,7 +33,14 @@
 \end{solution}
 \section*{Problem 2}
 \begin{solution}
-    
+    We can implement the disjoint-set data structure using trees. We implement
+    Create(\(x\)) by creating a new tree with a single vertex \(x\) and this
+    takes \(O(1)\) time. The root of the tree has the name of the set and
+    number \(x\). The leaves are all of the elements in the same set. We
+    implement Find(\(x\)) by iterating over all vertices of all the trees so
+    this takes \(O(n)\) time. We implement Union(\(Y, Z\)) by attaching the
+    root of \(Z\) to \(Y\) and update its name of the set to \(Y\) so the time
+    complexity is \(O(1)\).
 \end{solution}
 \section*{Problem 3}
 \begin{solution}
