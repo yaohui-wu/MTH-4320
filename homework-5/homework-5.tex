@@ -44,7 +44,19 @@
 \end{solution}
 \section*{Problem 3}
 \begin{solution}
-    
+    The implementation of the data structure is
+    \begin{itemize}
+        \item Init(\(p\)): Create a linked list with \(p\) keys as roads and
+        the value of each node is a linked list with the values as bridges.
+        The time complexity is \(O(p)\).
+        \item Build(\(r, h\)): Insert a new element \(h\) to the linked list
+        \(r\).The time complexity is \(O(1)\).
+        \item Road(\(r\)): Traverse the linked list \(r\) to print every
+        element \(h\). The time complexity is \(O(t)\).
+        \item Trip(\(h\)): Traverse all linked lists for roads and print if
+        there is an element greater than \(h\) in the linked list of bridges.
+        The time complexity is \(O(p)\).
+    \end{itemize}
 \end{solution}
 \section*{Problem 4}
 \begin{solution}
