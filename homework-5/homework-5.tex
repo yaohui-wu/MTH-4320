@@ -8,13 +8,28 @@
 
 \title{MTH 4320 Homework 5}
 \author{Yaohui Wu}
-\date{March 12, 2024}
+\date{March 13, 2024}
 
 \begin{document}
 \maketitle
 \section*{Problem 1}
 \begin{solution}
-    
+    Let \textit{sum} be an attribute of the stack and \textit{sum} is 0 when
+    we create the stack. If the stack is empty and we push an element then we
+    add that number to \textit{sum} to update the sum of the stack. Similarly,
+    if the stack is not empty and we pop an element then we subtract it from
+    \textit{sum} to update the sum. If \(S_1\) is empty and we push an element
+    then \textit{max} is that element which we also push it to \(S_2\). Let \(
+    S_1\) be the stack storing all of the elements and let \(S_2\) be a stack
+    that stores the values of \textit{max}. Every time we push an element we
+    compare it with \textit{max} and update \textit{max} if the new element is
+    greater then push the new element to both \(S_1\) and \(S_2\). Similarly,
+    when we pop an element from \(S_1\) we check if it is the top element in
+    \(S_2\) which is \textit{max}. If it is \textit{max} then remove the
+    element from \(S_1\) and \(S_2\). The new \textit{max} of \(S_1\) is the
+    new top element in \(S_2\). Since all operations take \(O(1)\) time to
+    update \textit{sum} and \textit{max}, hence the time complexity of the
+    operations \textit{sum} and \textit{max} are \(O(1)\).
 \end{solution}
 \section*{Problem 2}
 \begin{solution}
@@ -25,10 +40,6 @@
     
 \end{solution}
 \section*{Problem 4}
-\begin{solution}
-    
-\end{solution}
-\section*{Problem 5}
 \begin{solution}
     Let \(G\) be a graph where the vertices represent the entries of the
     Sudoku grid. There is an edge between two vertices if they are in the same
