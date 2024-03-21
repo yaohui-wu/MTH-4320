@@ -44,16 +44,32 @@
 \begin{solution}
     The algorithm using the sliding window approach is:
     \begin{enumerate}
-        \item 
+        \item Start from the first element in \(L\) and iterate to add every
+        element to the sum until the sum is at least \(k\). This is our
+        sliding window with start as the first element of \(L\) and the end is
+        the last elementof the subsequence.
+        \item Move the start of the sliding window to the right until the sum
+        of the subsequence is less than \(k\).
+        \item Move the end of the sliding window to the right until the sum of
+        the subsequence is at least \(k\).
+        \item Repeat steps 2 and 3 until the end of the sliding window reaches
+        the end of \(L\). In these steps, if the subsequences with sum greater
+        than or equal to \(k\) are shorter then update the shortest
+        subsequence. At the end we have the shortest subsequence in \(L\) that
+        sums to at least \(k\).
     \end{enumerate}
-    The time complexity of the algorithm is \(O(n)\).
+    We move the start of the sliding window at most \(n\) times so it takes
+    \(O(n)\) time. We move the end of the sliding window \(n\) times so it
+    takes \(O(n)\) time. Checking and updating the shortest subsequence in
+    total takes \(O(n)\) time and all other operations take \(O(1)\) time. The
+    time complexity of the sliding window algorithm is \(O(n)\).
 \end{solution}
 \section*{Problem 4}
 \begin{solution}
     The algorithm using the sliding window approach is:
     \begin{enumerate}
-        \item 
+        \item
     \end{enumerate}
-    The time complexity of the algorithm is \(O(n)\).
+    The time complexity of the sliding window algorithm is \(O(n)\).
 \end{solution}
 \end{document}
