@@ -68,7 +68,18 @@
 \begin{solution}
     The algorithm using the sliding window approach is:
     \begin{enumerate}
-        \item
+        \item Let the beginning price on day one be the start of the sliding
+        window representing the buy price and the beginning price on day two
+        be the end representing the sell price.
+        \item Move the end of the window from left to right to find the
+        maximum sell price and calculate the profit as the maximum profit.
+        \item Move the start of the window from left to right until the end of
+        the window to find the minimum buy price and update maximum profit if
+        neccessary.
+        \item Repeat step 3 until the start of the window is the end of the
+        window.
+        \item Now we get the possible pair of minimum buy price and the
+        maximum sell price so we have the maximum profit.
     \end{enumerate}
     The time complexity of the sliding window algorithm is \(O(n)\).
 \end{solution}
