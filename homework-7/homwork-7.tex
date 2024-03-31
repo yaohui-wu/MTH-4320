@@ -32,7 +32,14 @@
 \end{solution}
 \section*{Problem 3}
 \begin{solution}
-    The time complexity of the algorithm is \(O(|V|+|E|)\).
+    Since the weight of each edge is either 0 or 5 thus we can directly choose
+    the lightest edge incidental to each vertex. Let \(u\) be an arbitrary
+    vertex in \(G\), we check all of its incidental edges. If an edge has
+    weight 0 then we add that edge to connect the adjacent vertex \(v\). If
+    all the edges have weight 5 then we can add any edge. Hence, we can make
+    sure that we select the lightest edge to connect each vertex in \(G\). We
+    run operations with \(O(1)\) time for \(|V|\) vertices and \(|E|\) edges
+    so the time complexity of the algorithm is \(O(|V|+|E|)\).
 \end{solution}
 \section*{Problem 4}
 \begin{solution}
