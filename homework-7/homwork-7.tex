@@ -21,32 +21,21 @@
 \end{solution}
 \section*{Problem 2}
 \begin{solution}
-    The algorithm is
-    \begin{enumerate}
-        \item 
-        \item 
-        \item 
-    \end{enumerate}
-    The time complexity is \(O(|V|\log|V|+|E|)\).
+    We can use a modified Prim's algorithm to find the maximum spanning tree
+    of \(G\). We can find the greatest edge \(e\) instead of the lightest edge
+    while keeping everything else in the algorithm the same. We can multiply
+    the weight of every edge by \(-1\) and we can use \(-\infty\) instead of
+    \(\infty\) in the priority queue. Therefore, when we remove a vertex with
+    the highest priority in the queue we will choose the edge with the highest
+    weight in the original graph. The time complexity of the modified Prim's
+    algorithm is \(O(|V|\log|V|+|E|)\).
 \end{solution}
 \section*{Problem 3}
 \begin{solution}
-    The algorithm is
-    \begin{enumerate}
-        \item 
-        \item 
-        \item 
-    \end{enumerate}
-    The time complexity is \(O(|V|+|E|)\).
+    The time complexity of the algorithm is \(O(|V|+|E|)\).
 \end{solution}
 \section*{Problem 4}
 \begin{solution}
-    The algorithm is
-    \begin{enumerate}
-        \item 
-        \item 
-        \item
-    \end{enumerate}
-    The time complexity is \(O(|V|+|E|)\).
+    The time complexity of the algorithm is \(O(|V|+|E|)\).
 \end{solution}
 \end{document}
