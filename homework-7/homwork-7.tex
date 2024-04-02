@@ -43,6 +43,9 @@
 \end{solution}
 \section*{Problem 4}
 \begin{solution}
-    The time complexity of the algorithm is \(O(|V|+|E|)\).
+    We can use BFS to find \(e\) in \(G\) and this takes \(O(|V|+|E|)\) time.
+    We can compare the weight of \(e\) to the edge with the same endpoints in
+    the MST. If the weight is lighter, then we replace the edge with \(e\) in
+    the new MST. The time complexity of the algorithm is \(O(|V|+|E|)\).
 \end{solution}
 \end{document}
