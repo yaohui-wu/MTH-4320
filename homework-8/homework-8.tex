@@ -15,5 +15,16 @@
 \maketitle
 \section*{Problem 1}
 \section*{Problem 2}
+\begin{solution}
+    We can start at the parent of the last leaf in the max-heap. For every
+    parent in the level we run a modified heapify for a min-heap so we swap
+    the parent with the smallest children. We repeat this algorithm until we
+    reach the root. Since the max-heap is ordered from greatest to least so
+    after we run the algorithm then every parent of the new min-heap will be
+    smaller than or equal to its children. The running time of building a heap
+    is \(O(n)\). There is no asymptotically faster algorithm because we have
+    to visit all \(n\) nodes of the heap. Therefore, the time complexity of
+    the algorithm is \(O(n)\).
+\end{solution}
 \section*{Problem 3}
 \end{document}
