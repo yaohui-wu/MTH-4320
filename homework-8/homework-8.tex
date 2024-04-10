@@ -9,11 +9,19 @@
 
 \title{MTH 4320 Homework 8}
 \author{Yaohui Wu}
-\date{April 8, 2024}
+\date{April 9, 2024}
 
 \begin{document}
 \maketitle
 \section*{Problem 1}
+\begin{solution}
+    We can use a min-heap and a global counter starting at zero for the key.
+    When we push we increment the counter by one then assign it to be the key
+    of the element and insert it into the heap. When we pop we decrement the
+    counter by one then we remove the last node which is the top of the stack.
+    The heap will always be in order since we maintain a counter for the keys.
+    Therefore, the time complexity of push and pop is \(O(1)\).
+\end{solution}
 \section*{Problem 2}
 \begin{solution}
     We can start at the parent of the last leaf in the max-heap. For every
@@ -27,4 +35,13 @@
     the algorithm is \(O(n)\).
 \end{solution}
 \section*{Problem 3}
+\begin{solution}
+    We use a max-heap and a min-heap, each containing about half of the
+    elements, to implement the data structure.
+    \begin{itemize}
+        \item Insert: The time complexity is \(O(\log n)\).
+        \item Remove: The time complexity is \(O(\log n)\).
+        \item Find median: The time complexity is \(O(1)\).
+    \end{itemize}
+\end{solution}
 \end{document}
