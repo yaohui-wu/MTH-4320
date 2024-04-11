@@ -9,7 +9,7 @@
 
 \title{MTH 4320 Homework 8}
 \author{Yaohui Wu}
-\date{April 9, 2024}
+\date{April 10, 2024}
 
 \begin{document}
 \maketitle
@@ -36,12 +36,22 @@
 \end{solution}
 \section*{Problem 3}
 \begin{solution}
-    We use a max-heap and a min-heap, each containing about half of the
-    elements, to implement the data structure.
+    Let \(M\) be the median and \(X\) be the element we insert or remove.
     \begin{itemize}
-        \item Insert: The time complexity is \(O(\log n)\).
-        \item Remove: The time complexity is \(O(\log n)\).
-        \item Find median: The time complexity is \(O(1)\).
+        \item Insert: If \(X\) is smaller than the root of the max-heap, then
+        we insert it to the max-heap, else we insert it to the min-heap. The
+        time complexity is \(O(\log n)\).
+        \item Remove: Search \(X\) in the two heaps and remove it. The time
+        complexity is \(O(\log n)\).
+        \item Find median: If the number of elements is even, then \(M\) is
+        the root of the max-heap, else \(M\) is the root of the heap with one
+        more element. The time complexity is \(O(1)\).
     \end{itemize}
+    If one heap has two more elements than the other, then we remove the root
+    of that heap and insert it to the other heap. After we insert or remove,
+    run heapify to fix and rebalance the two heaps. Therefore, the root of the
+    max-heap is the maximum of the lower half of the elements and the root of
+    the min-heap is the minimum of the upper half of the elements so we can
+    return the median in \(O(1)\) time.
 \end{solution}
 \end{document}
