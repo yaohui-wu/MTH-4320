@@ -1,6 +1,7 @@
 \documentclass[12pt]{article}
 \usepackage[letterpaper, margin=1in]{geometry}
 \usepackage{mlmodern}
+\usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
 
@@ -9,7 +10,7 @@
 
 \title{MTH 4320 Homework 9}
 \author{Yaohui Wu}
-\date{April 14, 2024}
+\date{April 15, 2024}
 
 \begin{document}
 \maketitle
@@ -19,6 +20,11 @@
 \end{solution}
 \section*{Problem 2}
 \begin{solution}
+    Let \(S[i,j]\) be the length of the longest palindrome in substring \(S\)
+    starting with the \(i\)th letter and ending with \(j\)th letter. We have
+    \begin{align*}
+        S[i,i] &= 1
+    \end{align*}
     The time complexity of the algorithm is \(O(n^2)\).
 \end{solution}
 \section*{Problem 3}
