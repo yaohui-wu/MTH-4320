@@ -10,21 +10,40 @@
 
 \title{MTH 4320 Homework 9}
 \author{Yaohui Wu}
-\date{April 15, 2024}
+\date{April 19, 2024}
 
 \begin{document}
 \maketitle
 \section*{Problem 1}
 \begin{solution}
-    The time complexity of the algorithm is \(O(n^2)\).
+    Let \(P[i]\) be the length of the longest primish subsequence \(S[i]\)
+    ending with element \(L[i]\) for \(i=1,2,\dots,n\). We have
+    \begin{align*}
+        P[1] &= 1 \\
+        P[2] &= \begin{cases}
+            1+P[1], &\text{if \(S[1]+L[2]\) is prime} \\
+            1, &\text{otherwise}
+        \end{cases} \\
+        P[3] &= \begin{cases}
+            1+\max_{1\leq j<3}P[j], &\text{if \(S[j]+L[3]\) is prime} \\
+            1, &\text{otherwise}
+        \end{cases}
+    \end{align*}
+    In general, we can deduce that
+    \begin{align*}
+        P[i] &= \begin{cases}
+            1+\max_{1\leq j<i}P[j], &\text{if \(S[j]+L[i]\) is prime} \\
+            1, &\text{otherwise}
+        \end{cases}
+    \end{align*}
+    The algorithm returns the length of the longest primish subsequence in
+    \(L\) by computing \[P=\max_{1\leq i\leq n}P[i]\] Assuming we can check if
+    a number is prime in \(O(1)\) time, computing \(P[i]\) takes \(O(i)\) time
+    so computing \(P\) takes \(O(1)+O(2)+\dots+O(n)=O(n^2)\) time. The time
+    complexity of the algorithm is \(O(n^2)\).
 \end{solution}
 \section*{Problem 2}
 \begin{solution}
-    Let \(S[i,j]\) be the length of the longest palindrome in substring \(S\)
-    starting with the \(i\)th letter and ending with \(j\)th letter. We have
-    \begin{align*}
-        S[i,i] &= 1
-    \end{align*}
     The time complexity of the algorithm is \(O(n^2)\).
 \end{solution}
 \section*{Problem 3}
