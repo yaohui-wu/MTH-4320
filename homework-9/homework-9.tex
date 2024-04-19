@@ -59,6 +59,18 @@
 \end{solution}
 \section*{Problem 3}
 \begin{solution}
-    The time complexity of the algorithm is \(O(n^2)\).
+    Let \(F(i,j)\) be the minimum damage for traveling a list of oases that
+    starts at \(L[i]\) and ends at \(L[j]\). We have
+    \begin{align*}
+        F(i,j) &= \begin{cases}
+            0, &\text{if \(i=j\)} \\
+            (10-x)^2 \text{ where \(x\) is the distance between \(L[i]\) and
+            \(L[j]\)}, &\text{if \(i=j-1\)} \\
+            (10-x)^2+\min_{1\leq k<i} F(i,k)+\min_{i<k\leq j} F(k,j),
+            &\text{otherwise}
+        \end{cases}
+    \end{align*}
+    For \(i=1,2,\dots,n\) and \(j=1,2,\dots,n\), we compute each \(F(i,j)\) in
+    \(O(1)\) time so the time complexity of the algorithm is \(O(n^2)\).
 \end{solution}
 \end{document}
