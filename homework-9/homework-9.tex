@@ -17,7 +17,7 @@
 \section*{Problem 1}
 \begin{solution}
     Let \(P[i]\) be the length of the longest primish subsequence \(S[i]\)
-    ending with element \(L[i]\) for \(i=1,2,\dots,n\). We have
+    that ends with element \(L[i]\) for \(i=1,2,\dots,n\). We have
     \begin{align*}
         P[1] &= 1 \\
         P[2] &= \begin{cases}
@@ -44,7 +44,18 @@
 \end{solution}
 \section*{Problem 2}
 \begin{solution}
-    The time complexity of the algorithm is \(O(n^2)\).
+    Let \(P(i,j)\) be the length of the longest palindrome in substring
+    \(S[i,j]\) that starts with the \(i\)th letter and ends with \(j\)th
+    letter. We have
+    \begin{align*}
+        P(i,j) &= \begin{cases}
+            1, &\text{if \(i=j\)} \\
+            2+P(i+1,j-1), &\text{if \(S[i]=S[j]\)} \\
+            \max\{P(i,j-1),P(i+1,j)\}, &\text{otherwise}
+        \end{cases}
+    \end{align*}
+    For \(i=1,2,\dots,n\) and \(j=1,2,\dots,n\), we compute each \(P(i,j)\) in
+    \(O(1)\) time so the time complexity of the algorithm is \(O(n^2)\).
 \end{solution}
 \section*{Problem 3}
 \begin{solution}
